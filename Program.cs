@@ -14,16 +14,18 @@ namespace Домашняя_работа__3
         static void Main(string[] args)
         {
             Console.WriteLine("Введите целое число: ");  //переменная, обозначающая число
-            int b = (int)double.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
             Console.WriteLine($"Это число...{ b}");
+
             if (b % 2 == 0) ;
-            {
-                Console.WriteLine("...является чётным");
-            }
-            else (b % 2 != 0);
+            Console.WriteLine("...является чётным");
+
+            else
             {
                 Console.WriteLine("...является нечётным");
             }
+
+            
                       
         }
     }
