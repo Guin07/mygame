@@ -17,10 +17,10 @@ namespace _3._2
             int[] cards = new int[x];
             
             Console.WriteLine("Введите номинал каждой карты:");
-            string card = Console.ReadLine();
+            string card;
             for (int i = 0; i < x; i++)
+            {
                 card = Console.ReadLine();
-            {                   
                 switch (card)
                 {
                     case "T":
