@@ -19,8 +19,8 @@ namespace _3._2
             //Console.Clear();
             Console.WriteLine("Введите номинал каждой карты:");
             string card = Console.ReadLine();
-            
             for (int i = 0; i < x; i++)
+                card = Console.ReadLine();
             {                   
                 switch (card)
                 {
@@ -66,17 +66,11 @@ namespace _3._2
                     default:
                         Console.WriteLine("Таких карт не существует");
                         break;
-
-                 }
-                summ += int.Parse(Console.ReadLine());
-
+                 }                
             } 
             if (summ == 21) Console.WriteLine("Поздравляем - Вы выиграли!");
             else if (summ > 21) Console.WriteLine("Вы сгорели!");
             else Console.WriteLine("Недобор!");
-
-         }
-
-        
+         }              
     }
 }
