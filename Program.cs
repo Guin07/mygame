@@ -5,42 +5,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _3._3
+namespace _3._3._1
 {
     class Program
     {
-        private static object primes;
+        public static int N { get; private set; }
 
-        void SieveOfEratosthenes(int n)
+        static void Main(string[] args)
+            
         {
-            bool[] primes = new bool[n + 1];
+            int count = 2;
+            
+
+            Console.WriteLine("Введите целое число: ");
+            int n = (int)double.Parse(Console.ReadLine());
+            
+            while (count < n)
+
             {
-                Console.WriteLine("Введите целое число: ");
-                int N = (int)double.Parse(Console.ReadLine());
-                while (N % N == 1 || N % 1 == N) ;
+                if (n % 2 == 1) 
                 {
-                    if (N == 1) Console.WriteLine("Число является простым!");
-                    {
-                        for (int i = 0; i < N; i++)
-                            primes[i] = true;
-                    }
+                    Console.WriteLine("Это простое число!"); 
+                    count++;
+                }
 
+                else if (n % 2 == n)
+                {
+                    Console.WriteLine("Это простое число!");
+                    count++;
+                }
 
-                else if (N == 0) Console.WriteLine("Число не является простым!");
-                    {
-                        for (int i = 2; i * i <= N; i++)
-                            if (primes[i])
-                                for (int j = i * 2; j <= n; j += i)
-                                    primes[j] = false;
-                    }
-
-
-                else (N ==) Console.WriteLine("Число не является простым!");
-                    {
-                        for (int i = 2; i <= N; i++)
-                            if (primes[i]) Console.Write(i + " ");
-                    }
-                }                              
+                else
+                {
+                    Console.WriteLine("Это не простое число!");
+                    count++;
+                }
+                break;
             }
         }
     }
