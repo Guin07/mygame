@@ -17,26 +17,30 @@ namespace _3._3
             {
                 Console.WriteLine("Введите целое число: ");
                 int N = (int)double.Parse(Console.ReadLine());
-                if (N==1) Console.WriteLine("Число является простым!");
+                while (N % N == 1 || N % 1 == N) ;
                 {
-                    for (int i = 0; i < N; i++)
-                        primes[i] = true;
-                }
-                
-                else if (N==0) Console.WriteLine("Число не является простым!");
-                {
-                    for (int i = 2; i * i <= N; i++)
-                        if (primes[i])
-                            for (int j = i * 2; j <= n; j += i)
-                                primes[j] = false;
-                }
-                
-                else if (N==) Console.WriteLine("Число не является простым!");
-                {
-                    for (int i = 2; i <= N; i++)
-                        if (primes[i]) Console.Write(i + " ");
-                }
-                
+                    if (N == 1) Console.WriteLine("Число является простым!");
+                    {
+                        for (int i = 0; i < N; i++)
+                            primes[i] = true;
+                    }
+
+
+                else if (N == 0) Console.WriteLine("Число не является простым!");
+                    {
+                        for (int i = 2; i * i <= N; i++)
+                            if (primes[i])
+                                for (int j = i * 2; j <= n; j += i)
+                                    primes[j] = false;
+                    }
+
+
+                else (N ==) Console.WriteLine("Число не является простым!");
+                    {
+                        for (int i = 2; i <= N; i++)
+                            if (primes[i]) Console.Write(i + " ");
+                    }
+                }                              
             }
         }
     }
