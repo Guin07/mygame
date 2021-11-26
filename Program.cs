@@ -5,71 +5,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _3._2
+namespace _3._3
 {
     class Program
-    {       
-        static void Main(string[] args)
+    {
+        private static object primes;
+
+        void SieveOfEratosthenes(int n)
         {
-            Console.WriteLine("Здравствуйте, игрок. Сколько у Вас карт на руках?");
-            int summ = 0;
-            int x = int.Parse(Console.ReadLine());
-            int[] cards = new int[x];
-            
-            Console.WriteLine("Введите номинал каждой карты:");
-            string card;
-            for (int i = 0; i < x; i++)
+            bool[] primes = new bool[n + 1];
             {
-                card = Console.ReadLine();
-                switch (card)
+                Console.WriteLine("Введите целое число: ");
+                int N = (int)double.Parse(Console.ReadLine());
+                if (N==1) Console.WriteLine("Число является простым!");
                 {
-                    case "T":
-                        summ += 10;
-                        break;
-                    case "K":
-                        summ += 10;
-                        break;
-                    case "Q":
-                        summ += 10;
-                        break;
-                    case "J":
-                        summ += 10;
-                        break;
-                    case "10":
-                        summ += 10;
-                        break;
-                    case "9":
-                        summ += 9;
-                        break;
-                    case "8":
-                        summ += 8;
-                        break;
-                    case "7":
-                        summ += 7;
-                        break;
-                    case "6":
-                        summ += 6;
-                        break;
-                    case "5":
-                        summ += 5;
-                        break;
-                    case "4":
-                        summ += 4;
-                        break;
-                    case "3":
-                        summ += 3;
-                        break;
-                    case "2":
-                        summ += 2;
-                        break;
-                    default:
-                        Console.WriteLine("Таких карт не существует");
-                        break;
-                 }                
-            } 
-            if (summ == 21) Console.WriteLine("Поздравляем - Вы выиграли!");
-            else if (summ > 21) Console.WriteLine("Вы сгорели!");
-            else Console.WriteLine("Недобор!");
-         }              
+                    for (int i = 0; i < N; i++)
+                        primes[i] = true;
+                }
+                
+                else if (N==0) Console.WriteLine("Число не является простым!");
+                {
+                    for (int i = 2; i * i <= N; i++)
+                        if (primes[i])
+                            for (int j = i * 2; j <= n; j += i)
+                                primes[j] = false;
+                }
+                
+                else if (N==) Console.WriteLine("Число не является простым!");
+                {
+                    for (int i = 2; i <= N; i++)
+                        if (primes[i]) Console.Write(i + " ");
+                }
+                
+            }
+        }
     }
 }
