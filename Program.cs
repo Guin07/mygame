@@ -12,36 +12,32 @@ namespace _3._3._1
         public static int N { get; private set; }
 
         static void Main(string[] args)
-            
+
         {
             int count = 2;
-            
+
 
             Console.WriteLine("Введите целое число: ");
-            int n = (int)double.Parse(Console.ReadLine());
-            
+            int n = int.Parse(Console.ReadLine());
+
             while (count < n)
 
             {
-                if (n % 2 == 1) 
+                if (n % count >= 1)
                 {
-                    Console.WriteLine("Это простое число!"); 
-                    count++;
+                    Console.WriteLine($"Это число {n} не поделилось на {count}! Оно является простым.");
+                    
                 }
 
-                else if (n % 2 == n)
+                else if (n % count == 0)
                 {
-                    Console.WriteLine("Это простое число!");
-                    count++;
+                    Console.WriteLine($"Это число {n} поделилось на {count}! Оно не является простым.");
+                    
                 }
+                count++;
 
-                else
-                {
-                    Console.WriteLine("Это не простое число!");
-                    count++;
-                }
-                break;
-            }
+            } Console.ReadKey();
         }
     }
+    
 }
